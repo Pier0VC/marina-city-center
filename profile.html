@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Profile</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body class="bg-gradient-to-b from-[#F8FAFC] to-[#EEF4FA] min-h-screen">
+
+  <!-- MAIN -->
+  <main
+    id="profileContainer"
+    class="max-w-5xl mx-auto pb-40"
+  >
+
+    <!-- LOADING -->
+    <div class="flex items-center justify-center py-40">
+
+      <p class="text-gray-400 text-xl">
+        Loading profile...
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0B1F3A] w-[92%] max-w-md rounded-[32px] px-6 py-5 shadow-2xl"
+  >
+
+    <div class="flex items-center justify-between text-white">
+
+      <!-- HOME -->
+      <button
+        onclick="window.location.href='home.html'"
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">
+          🏠
+        </span>
+
+        <span class="text-sm">
+          Home
+        </span>
+
+      </button>
+
+      <!-- EXPLORE -->
+      <button
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">
+          🔎
+        </span>
+
+        <span class="text-sm">
+          Explore
+        </span>
+
+      </button>
+
+      <!-- CREATE -->
+      <button
+        onclick="window.location.href='create-plan.html'"
+        class="w-16 h-16 rounded-3xl bg-[#5DA9E9] text-white text-3xl flex items-center justify-center -mt-12 shadow-2xl"
+      >
+        +
+      </button>
+
+      <!-- COMMUNITY -->
+      <button
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">
+          👥
+        </span>
+
+        <span class="text-sm">
+          Community
+        </span>
+
+      </button>
+
+      <!-- PROFILE -->
+      <button
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">
+          👤
+        </span>
+
+        <span class="text-sm">
+          Profile
+        </span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+  <script
+    type="module"
+    src="./js/profile.js">
+  </script>
+
+  <script
+    type="module"
+    src="./js/auth-guard.js">
+  </script>
+
+  <script
+    type="module"
+    src="./js/logout.js">
+  </script>
+
+</body>
+</html>

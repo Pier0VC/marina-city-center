@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Create Account</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-[#0B1F3A] min-h-screen flex items-center justify-center px-6">
+
+  <!-- CARD -->
+  <div
+    class="w-full max-w-lg bg-white/10 border border-white/10 backdrop-blur-3xl rounded-[40px] p-10 shadow-2xl"
+  >
+
+    <!-- LOGO -->
+    <div class="flex justify-center mb-8">
+
+      <img
+        src="./assets/logos/marina-logo-white.png"
+        class="h-16 object-contain"
+      >
+
+    </div>
+
+    <!-- TITLE -->
+    <h1
+      class="text-white text-4xl font-bold text-center mb-3"
+    >
+      Create Account
+    </h1>
+
+    <p
+      class="text-gray-300 text-center mb-10"
+    >
+      Join Marina Community
+    </p>
+
+    <!-- FORM -->
+    <form
+      id="registerForm"
+      class="space-y-6"
+    >
+
+      <!-- NAME -->
+      <div>
+
+        <label class="text-white block mb-3">
+          Full Name
+        </label>
+
+        <input
+          id="registerName"
+          type="text"
+          placeholder="Pier Oviedo"
+          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+        >
+
+      </div>
+
+      <!-- APARTMENT -->
+      <div>
+
+        <label class="text-white block mb-3">
+          Apartment ID
+        </label>
+
+        <input
+          id="registerApartment"
+          type="text"
+          placeholder="Tower B · 2104"
+          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+        >
+
+      </div>
+
+      <!-- EMAIL -->
+      <div>
+
+        <label class="text-white block mb-3">
+          Email
+        </label>
+
+        <input
+          id="registerEmail"
+          type="email"
+          placeholder="resident@email.com"
+          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+        >
+
+      </div>
+
+      <!-- PASSWORD -->
+      <div>
+
+        <label class="text-white block mb-3">
+          Password
+        </label>
+
+        <input
+          id="registerPassword"
+          type="password"
+          placeholder="••••••••"
+          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+        >
+
+      </div>
+
+      <!-- BUTTON -->
+      <button
+        type="submit"
+        class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
+      >
+        Create Account
+      </button>
+
+    </form>
+
+    <!-- LOGIN -->
+    <div class="text-center mt-8">
+
+      <button
+        onclick="window.location.href='login.html'"
+        class="text-[#5DA9E9] font-semibold"
+      >
+        Already have an account?
+      </button>
+
+    </div>
+
+  </div>
+
+  <script
+    type="module"
+    src="./js/register.js">
+  </script>
+
+</body>
+</html>

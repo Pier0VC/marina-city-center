@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Create Plan</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body class="bg-gradient-to-b from-[#F8FAFC] to-[#EEF4FA] min-h-screen">
+
+  <!-- MAIN -->
+  <main class="max-w-3xl mx-auto px-6 py-10 pb-40">
+
+    <!-- TOP -->
+    <section class="mb-10">
+
+      <div class="flex items-center justify-between mb-8">
+
+        <!-- BACK -->
+        <button
+          onclick="window.location.href='home.html'"
+          class="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl"
+        >
+          ←
+        </button>
+
+        <!-- TITLE -->
+        <div class="text-right">
+
+          <p class="text-gray-400 text-sm mb-1">
+            Marina Community
+          </p>
+
+          <h1 class="text-4xl font-bold text-[#0B1F3A]">
+            Create Plan
+          </h1>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FORM CARD -->
+    <section
+      class="bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-8 md:p-10"
+    >
+
+      <form id="createPlanForm" class="space-y-8">
+
+        <!-- TITLE -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Plan Title
+          </label>
+
+          <input
+            id="planTitle"
+            type="text"
+            placeholder="Rooftop Movie Night"
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] transition-all"
+          >
+
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Description
+          </label>
+
+          <textarea
+            id="planDescription"
+            rows="5"
+            placeholder="Describe your community plan..."
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] transition-all resize-none"
+          ></textarea>
+
+        </div>
+
+        <!-- DATE & TIME -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- DATE -->
+          <div>
+
+            <label
+              class="block text-[#0B1F3A] font-semibold mb-3"
+            >
+              Date
+            </label>
+
+            <input
+              id="planDate"
+              type="date"
+              class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+            >
+
+          </div>
+
+          <!-- TIME -->
+          <div>
+
+            <label
+              class="block text-[#0B1F3A] font-semibold mb-3"
+            >
+              Time
+            </label>
+
+            <input
+              id="planTime"
+              type="time"
+              class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Location
+          </label>
+
+          <select
+            id="planLocation"
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+          >
+
+            <option value="">
+              Select location
+            </option>
+
+            <option>
+              Rooftop
+            </option>
+
+            <option>
+              Lounge
+            </option>
+
+            <option>
+              Terrace
+            </option>
+
+            <option>
+              Outside Marina
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- CATEGORY -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Category
+          </label>
+
+          <div class="flex flex-wrap gap-4">
+
+            <button
+              type="button"
+              class="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-semibold"
+            >
+              Social
+            </button>
+
+            <button
+              type="button"
+              class="bg-orange-100 text-orange-600 px-5 py-3 rounded-2xl font-semibold"
+            >
+              Sports
+            </button>
+
+            <button
+              type="button"
+              class="bg-purple-100 text-purple-600 px-5 py-3 rounded-2xl font-semibold"
+            >
+              Chill
+            </button>
+
+            <button
+              type="button"
+              class="bg-green-100 text-green-600 px-5 py-3 rounded-2xl font-semibold"
+            >
+              Outdoor
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- COVER SELECTOR -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-4"
+          >
+            Choose Cover Style
+          </label>
+
+          <select
+            id="planCover"
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+          >
+
+            <option value="">
+              Select a premium cover
+            </option>
+
+            <option value="movie-night">
+              Movie Night
+            </option>
+
+            <option value="rooftop-party">
+              Rooftop Party
+            </option>
+
+            <option value="sports-night">
+              Sports Night
+            </option>
+
+            <option value="sunset-lounge">
+              Sunset Lounge
+            </option>
+
+            <option value="gaming-night">
+              Gaming Night
+            </option>
+
+            <option value="pool-party">
+              Pool Party
+            </option>
+
+            <option value="bbq-night">
+              BBQ Night
+            </option>
+
+            <option value="networking">
+              Networking Event
+            </option>
+
+            <option value="wine-night">
+              Wine Night
+            </option>
+
+            <option value="coffee-meet">
+              Coffee Meetup
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- WHATSAPP LINK -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            WhatsApp Group Link
+          </label>
+
+          <input
+            id="planWhatsapp"
+            type="url"
+            placeholder="https://chat.whatsapp.com/..."
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+          >
+
+        </div>
+
+        <!-- CAPACITY -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Capacity
+          </label>
+
+          <input
+            id="planCapacity"
+            type="number"
+            placeholder="20"
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
+          >
+
+        </div>
+
+        <!-- RECOMMENDATIONS -->
+        <div>
+
+          <label
+            class="block text-[#0B1F3A] font-semibold mb-3"
+          >
+            Recommendations
+          </label>
+
+          <textarea
+            id="planRecommendations"
+            rows="4"
+            placeholder="What should neighbors bring?"
+            class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] resize-none"
+          ></textarea>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex flex-col md:flex-row gap-5 pt-6">
+
+          <!-- PREVIEW -->
+          <button
+            type="button"
+            class="w-full bg-[#E8EEF5] text-[#0B1F3A] py-5 rounded-2xl font-semibold text-lg"
+          >
+            Preview Plan
+          </button>
+
+          <!-- PUBLISH -->
+          <button
+            id="publishPlanBtn"
+            type="submit"
+            class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-5 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-xl"
+          >
+            Publish Plan
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0B1F3A] w-[92%] max-w-md rounded-[32px] px-6 py-5 shadow-2xl"
+  >
+
+    <div class="flex items-center justify-between text-white">
+
+      <button
+        onclick="window.location.href='home.html'"
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">🏠</span>
+
+        <span class="text-sm">
+          Home
+        </span>
+
+      </button>
+
+      <button class="flex flex-col items-center gap-2">
+
+        <span class="text-2xl">🔎</span>
+
+        <span class="text-sm">
+          Explore
+        </span>
+
+      </button>
+
+      <button
+        class="w-16 h-16 rounded-3xl bg-[#5DA9E9] text-white text-3xl flex items-center justify-center -mt-12 shadow-2xl"
+      >
+        +
+      </button>
+
+      <button class="flex flex-col items-center gap-2">
+
+        <span class="text-2xl">👥</span>
+
+        <span class="text-sm">
+          Community
+        </span>
+
+      </button>
+
+      <button
+        onclick="window.location.href='profile.html'"
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">👤</span>
+
+        <span class="text-sm">
+          Profile
+        </span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+  <script
+    type="module"
+    src="./js/create-plan.js">
+  </script>
+
+  <script
+    type="module"
+    src="./js/auth-guard.js">
+  </script>
+
+</body>
+</html>

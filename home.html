@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Marina Community</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-to-b from-[#F8FAFC] to-[#EEF4FA]">
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-5xl mx-auto min-h-screen pb-32">
+
+    <!-- TOP NAV -->
+    <section class="px-6 pt-8">
+
+      <div
+        class="bg-gradient-to-r from-[#081C35] to-[#0B1F3A] rounded-[32px] px-6 py-5 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
+      >
+
+        <!-- LEFT -->
+        <div>
+
+            <p
+            id="userName"
+            class="text-gray-300 text-sm mb-1"
+            >
+            Good Evening
+            </p>
+
+          <h1 class="text-white text-2xl font-bold">
+            Marina Community
+          </h1>
+
+        </div>
+
+        <!-- PROFILE -->
+        <button
+        onclick="window.location.href='profile.html'"
+        class="w-14 h-14 rounded-2xl bg-[#5DA9E9] flex items-center justify-center text-white font-bold text-lg"
+        >
+
+        <span id="userInitial">
+            P
+        </span>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- SEARCH -->
+    <section class="px-6 mt-8">
+
+      <div
+        class="bg-white rounded-3xl shadow-lg px-5 py-4 flex items-center gap-4"
+      >
+
+        <span class="text-gray-400 text-xl">
+          🔍
+        </span>
+
+        <input
+          type="text"
+          placeholder="Search plans or neighbors"
+          class="w-full outline-none text-gray-700"
+        >
+
+      </div>
+
+    </section>
+
+    <!-- TITLE -->
+    <section class="px-6 mt-10">
+
+      <div class="flex items-center justify-between">
+
+        <h2 class="text-3xl font-bold text-[#0B1F3A]">
+          Trending Plans
+        </h2>
+
+        <button class="text-[#5DA9E9] font-semibold">
+          View All
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- EVENT FEED -->
+    <section
+    id="eventsContainer"
+    class="px-6 mt-8 space-y-8"
+    >
+
+</section>
+
+  </main>
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0B1F3A] w-[92%] max-w-md rounded-[32px] px-6 py-5 shadow-2xl"
+  >
+
+    <div class="flex items-center justify-between text-white">
+
+      <!-- HOME -->
+      <button class="flex flex-col items-center gap-2">
+
+        <span class="text-2xl">
+          🏠
+        </span>
+
+        <span class="text-sm">
+          Home
+        </span>
+
+      </button>
+
+      <!-- EXPLORE -->
+      <button class="flex flex-col items-center gap-2">
+
+        <span class="text-2xl">
+          🔎
+        </span>
+
+        <span class="text-sm">
+          Explore
+        </span>
+
+      </button>
+
+      <!-- CREATE -->
+      <button
+        onclick="window.location.href='create-plan.html'"
+        class="w-16 h-16 rounded-3xl bg-[#5DA9E9] text-white text-3xl flex items-center justify-center -mt-12 shadow-2xl"
+      >
+        +
+      </button>
+
+      <!-- COMMUNITY -->
+      <button class="flex flex-col items-center gap-2">
+
+        <span class="text-2xl">
+          👥
+        </span>
+
+        <span class="text-sm">
+          Community
+        </span>
+
+      </button>
+
+      <!-- PROFILE -->
+      <button
+        onclick="window.location.href='profile.html'"
+        class="flex flex-col items-center gap-2"
+      >
+
+        <span class="text-2xl">
+          👤
+        </span>
+
+        <span class="text-sm">
+          Profile
+        </span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+    <script
+    type="module"
+    src="./js/home.js">
+    </script>
+
+    <script
+    type="module"
+    src="./js/auth-guard.js">
+    </script>
+
+    <script
+    type="module"
+    src="./js/current-user.js">
+    </script>
+
+    <script
+    type="module"
+    src="./js/join-plan.js">
+    </script>
+
+    <script
+    type="module"
+    src="./js/delete-plan.js">
+    </script>
+    
+</body>
+</html>
