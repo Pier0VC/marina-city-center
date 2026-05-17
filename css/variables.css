@@ -1,0 +1,16 @@
+:root {
+  --navy: #0B1F3A;
+  --ocean: #1E5F8C;
+  --cyan: #5DA9E9;
+  --background: #F8FAFC;
+  --gray: #D6DCE5;
+  --white: #FFFFFF;
+
+  --radius: 22px;
+
+  --shadow-soft:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  --transition:
+    all 0.3s ease;
+}
