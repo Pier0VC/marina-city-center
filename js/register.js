@@ -23,6 +23,40 @@ import {
 const form =
   document.getElementById("registerForm");
 
+// URL PARAMS
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+// INVITE CODE
+const inviteCodeFromUrl =
+  params.get("code");
+
+// INPUT
+const inviteInput =
+  document.getElementById(
+    "registerInviteCode"
+  );
+
+// AUTO FILL
+if (inviteCodeFromUrl) {
+
+  inviteInput.value =
+    inviteCodeFromUrl;
+
+  // LOCK INPUT
+  inviteInput.readOnly =
+    true;
+
+  // OPTIONAL STYLE
+  inviteInput.classList.add(
+    "opacity-70",
+    "cursor-not-allowed"
+  );
+
+}
+
 // SUBMIT
 form.addEventListener("submit", async (e) => {
 
