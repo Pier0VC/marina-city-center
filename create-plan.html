@@ -11,10 +11,11 @@
     href="./assets/favicon.png"
   />
 
-  <title>Create Plan</title>
+  <title>Crear Plan</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="./css/styles.css">
@@ -77,13 +78,14 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            Plan Title
+            Título del Plan (*)
           </label>
 
           <input
             id="planTitle"
+              required
             type="text"
-            placeholder="Rooftop Movie Night"
+            placeholder="Noche de Películas en la Terraza"
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] transition-all"
           >
 
@@ -95,13 +97,14 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            Description
+            Descripción  (*)
           </label>
 
           <textarea
             id="planDescription"
+            required
             rows="5"
-            placeholder="Describe your community plan..."
+            placeholder="Describe tu plan comunitario..."
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] transition-all resize-none"
           ></textarea>
 
@@ -116,12 +119,13 @@
             <label
               class="block text-[#0B1F3A] font-semibold mb-3"
             >
-              Date
+              Fecha  (*)
             </label>
 
             <input
               id="planDate"
               type="date"
+              required
               class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
             >
 
@@ -133,12 +137,13 @@
             <label
               class="block text-[#0B1F3A] font-semibold mb-3"
             >
-              Time
+              Hora  (*)
             </label>
 
             <input
               id="planTime"
               type="time"
+              required
               class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
             >
 
@@ -152,28 +157,37 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            Location
+            Ubicación  (*)
           </label>
 
           <select
             id="planLocation"
+            required
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
           >
 
             <option value="">
-              Select location
+              Selecciona ubicación - Piso 21
             </option>
 
             <option>
-              Rooftop
+              Terraza
             </option>
 
             <option>
-              Lounge
+              Sala Bar
             </option>
 
             <option>
-              Terrace
+              Sala Lounge
+            </option>
+
+            <option>
+              Piscina
+            </option>            
+
+            <option>
+              Terraza
             </option>
 
             <option>
@@ -187,38 +201,56 @@
         <!-- CATEGORY -->
         <div>
 
-          <label
-            class="block text-[#0B1F3A] font-semibold mb-3"
-          >
-            Category
+          <label class="text-[#0B1F3A] font-semibold block mb-4">
+            Categoría 
           </label>
 
+          <!-- HIDDEN -->
+          <input
+            type="hidden"
+            id="selectedCategory"
+            value="Social"
+          >
+
+          <!-- OPTIONS -->
           <div class="flex flex-wrap gap-4">
 
+            <!-- SOCIAL -->
             <button
               type="button"
-              class="bg-blue-100 text-blue-600 px-5 py-3 rounded-2xl font-semibold"
+              data-category="Social"
+              data-active="blue"
+              class="category-btn active-category bg-blue-100 text-blue-600 px-6 py-4 rounded-2xl font-semibold transition-all duration-300"
             >
               Social
             </button>
 
+            <!-- SPORTS -->
             <button
               type="button"
-              class="bg-orange-100 text-orange-600 px-5 py-3 rounded-2xl font-semibold"
+              data-category="Sports"
+              data-active="orange"
+              class="category-btn bg-orange-100 text-orange-500 px-6 py-4 rounded-2xl font-semibold transition-all duration-300"
             >
               Sports
             </button>
 
+            <!-- CHILL -->
             <button
               type="button"
-              class="bg-purple-100 text-purple-600 px-5 py-3 rounded-2xl font-semibold"
+              data-category="Chill"
+              data-active="purple"
+              class="category-btn bg-purple-100 text-purple-500 px-6 py-4 rounded-2xl font-semibold transition-all duration-300"
             >
               Chill
             </button>
 
+            <!-- OUTDOOR -->
             <button
               type="button"
-              class="bg-green-100 text-green-600 px-5 py-3 rounded-2xl font-semibold"
+              data-category="Outdoor"
+              data-active="green"
+              class="category-btn bg-green-100 text-green-600 px-6 py-4 rounded-2xl font-semibold transition-all duration-300"
             >
               Outdoor
             </button>
@@ -233,32 +265,33 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-4"
           >
-            Choose Cover Style
+            Elegir Estilo de Portada (*)
           </label>
 
           <select
             id="planCover"
+            required
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
           >
 
             <option value="">
-              Select a premium cover
+              Selecciona una portada premium
             </option>
 
             <option value="movie-night">
-              Movie Night
+              Noche de Películas
             </option>
 
             <option value="rooftop-party">
-              Rooftop Party
+              Fiesta en la Terraza
             </option>
 
             <option value="sports-night">
-              Sports Night
+              Noche de Deportes
             </option>
 
             <option value="sunset-lounge">
-              Sunset Lounge
+              Atardecer Lounge
             </option>
 
             <option value="gaming-night">
@@ -278,7 +311,7 @@
             </option>
 
             <option value="wine-night">
-              Wine Night
+              Noche de Vinos
             </option>
 
             <option value="coffee-meet">
@@ -295,7 +328,7 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            WhatsApp Group Link
+            Link del Grupo de WhatsApp
           </label>
 
           <input
@@ -313,12 +346,13 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            Capacity
+            Capacidad (*)
           </label>
 
           <input
             id="planCapacity"
             type="number"
+            required
             placeholder="20"
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9]"
           >
@@ -331,13 +365,13 @@
           <label
             class="block text-[#0B1F3A] font-semibold mb-3"
           >
-            Recommendations
+            Recomendaciones
           </label>
 
           <textarea
             id="planRecommendations"
             rows="4"
-            placeholder="What should neighbors bring?"
+            placeholder="¿Qué deberían traer los vecinos?"
             class="w-full bg-[#F4F7FB] rounded-2xl px-6 py-5 outline-none border border-transparent focus:border-[#5DA9E9] resize-none"
           ></textarea>
 
@@ -348,10 +382,11 @@
 
           <!-- PREVIEW -->
           <button
+            id="previewPlanBtn"
             type="button"
-            class="w-full bg-[#E8EEF5] text-[#0B1F3A] py-5 rounded-2xl font-semibold text-lg"
+            class="w-full bg-[#E8EEF5] text-[#0B1F3A] py-5 rounded-2xl font-semibold text-lg hover:bg-[#DCE7F3] transition-all duration-300"
           >
-            Preview Plan
+            Vista Previa
           </button>
 
           <!-- PUBLISH -->
@@ -360,7 +395,7 @@
             type="submit"
             class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-5 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-xl"
           >
-            Publish Plan
+            Publicar Plan
           </button>
 
         </div>
@@ -372,67 +407,7 @@
   </main>
 
   <!-- BOTTOM NAV -->
-  <nav
-    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0B1F3A] w-[92%] max-w-md rounded-[32px] px-6 py-5 shadow-2xl"
-  >
-
-    <div class="flex items-center justify-between text-white">
-
-      <button
-        onclick="window.location.href='home.html'"
-        class="flex flex-col items-center gap-2"
-      >
-
-        <span class="text-2xl">🏠</span>
-
-        <span class="text-sm">
-          Home
-        </span>
-
-      </button>
-
-      <button class="flex flex-col items-center gap-2">
-
-        <span class="text-2xl">🔎</span>
-
-        <span class="text-sm">
-          Explore
-        </span>
-
-      </button>
-
-      <button
-        class="w-16 h-16 rounded-3xl bg-[#5DA9E9] text-white text-3xl flex items-center justify-center -mt-12 shadow-2xl"
-      >
-        +
-      </button>
-
-      <button class="flex flex-col items-center gap-2">
-
-        <span class="text-2xl">👥</span>
-
-        <span class="text-sm">
-          Community
-        </span>
-
-      </button>
-
-      <button
-        onclick="window.location.href='profile.html'"
-        class="flex flex-col items-center gap-2"
-      >
-
-        <span class="text-2xl">👤</span>
-
-        <span class="text-sm">
-          Profile
-        </span>
-
-      </button>
-
-    </div>
-
-  </nav>
+  <div id="navbarContainer"></div>
 
   <script
     type="module"
@@ -443,6 +418,26 @@
     type="module"
     src="./js/auth-guard.js">
   </script>
+
+  <script
+    type="module"
+    src="./js/load-components.js">
+  </script>
+
+
+    <!-- PREVIEW MODAL -->
+    <div
+      id="previewModal"
+      class="fixed inset-0 bg-black/60 backdrop-blur-xl z-[99999] hidden items-center justify-center p-6"
+    >
+
+      <!-- CONTENT -->
+      <div
+        id="previewContent"
+        class="w-full max-w-2xl"
+      ></div>
+
+    </div>
 
 </body>
 </html>

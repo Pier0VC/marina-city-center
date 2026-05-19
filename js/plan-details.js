@@ -395,7 +395,7 @@ async function loadPlanDetails() {
       </section>
 
       <!-- CONTENT -->
-      <section class="px-6 -mt-14 relative z-20 pb-20">
+      <section class="px-6 -mt-14 relative z-20 pb-56">
 
         <!-- MAIN CARD -->
         <div

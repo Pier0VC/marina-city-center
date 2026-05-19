@@ -15,6 +15,76 @@ import {
 const form =
   document.getElementById("createPlanForm");
 
+// CATEGORY BUTTONS
+const categoryButtons =
+  document.querySelectorAll(".category-btn");
+
+// SELECTED CATEGORY
+const selectedCategory =
+  document.getElementById("selectedCategory");
+
+// RESET
+function resetCategories() {
+
+  categoryButtons.forEach((btn) => {
+
+    btn.classList.remove(
+      "scale-110",
+      "shadow-2xl",
+      "ring-4",
+      "ring-blue-300",
+      "ring-orange-300",
+      "ring-purple-300",
+      "ring-green-300"
+    );
+
+  });
+
+}
+
+// ACTIVATE
+function activateCategory(button) {
+
+  // COLOR
+  const color =
+    button.dataset.active;
+
+  // BASE EFFECTS
+  button.classList.add(
+    "scale-110",
+    "shadow-2xl",
+    "ring-4"
+  );
+
+  // COLOR RING
+  button.classList.add(
+    `ring-${color}-300`
+  );
+
+}
+
+// DEFAULT ACTIVE
+activateCategory(categoryButtons[0]);
+
+// EVENTS
+categoryButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    // RESET
+    resetCategories();
+
+    // ACTIVATE
+    activateCategory(button);
+
+    // SAVE VALUE
+    selectedCategory.value =
+      button.dataset.category;
+
+  });
+
+});
+
 // COVER IMAGES MAP
 const coverImages = {
 
@@ -49,6 +119,205 @@ const coverImages = {
     "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop"
 
 };
+
+
+// PREVIEW BUTTON
+const previewBtn =
+  document.getElementById("previewPlanBtn");
+
+// MODAL
+const previewModal =
+  document.getElementById("previewModal");
+
+// CONTENT
+const previewContent =
+  document.getElementById("previewContent");
+
+// PREVIEW
+previewBtn.addEventListener("click", () => {
+
+  // VALUES
+  const title =
+    document.getElementById("planTitle").value;
+
+  const description =
+    document.getElementById("planDescription").value;
+
+  const date =
+    document.getElementById("planDate").value;
+
+  const time =
+    document.getElementById("planTime").value;
+
+  const location =
+    document.getElementById("planLocation").value;
+
+  const capacity =
+    document.getElementById("planCapacity").value;
+
+  const selectedCover =
+    document.getElementById("planCover").value;
+
+  const category =
+    selectedCategory.value;
+
+  // COVER
+  const coverImage =
+    coverImages[selectedCover];
+
+  // RENDER
+  previewContent.innerHTML = `
+
+    <div
+      class="bg-white rounded-[40px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.25)] animate-[fadeIn_.3s_ease]"
+    >
+
+      <!-- IMAGE -->
+      <img
+        src="${coverImage}"
+        class="w-full h-72 object-cover"
+      >
+
+      <!-- CONTENT -->
+      <div class="p-8">
+
+        <!-- CATEGORY -->
+        <div class="mb-5">
+
+          <span
+            class="bg-[#EEF4FF] text-[#5DA9E9] px-4 py-2 rounded-full text-sm font-semibold"
+          >
+            ${category}
+          </span>
+
+        </div>
+
+        <!-- TITLE -->
+        <h2
+          class="text-4xl font-bold text-[#0B1F3A] mb-5"
+        >
+          ${title || "Título del Plan"}
+        </h2>
+
+        <!-- DESCRIPTION -->
+        <p
+          class="text-gray-500 leading-relaxed mb-8"
+        >
+          ${description || "Descripción del plan..."}
+        </p>
+
+        <!-- INFO -->
+        <div class="space-y-4 mb-8">
+
+          <div
+            class="flex items-center justify-between"
+          >
+
+            <span class="text-gray-400">
+              Fecha
+            </span>
+
+            <span class="font-semibold text-[#0B1F3A]">
+              ${date || "--"}
+            </span>
+
+          </div>
+
+          <div
+            class="flex items-center justify-between"
+          >
+
+            <span class="text-gray-400">
+              Hora
+            </span>
+
+            <span class="font-semibold text-[#0B1F3A]">
+              ${time || "--"}
+            </span>
+
+          </div>
+
+          <div
+            class="flex items-center justify-between"
+          >
+
+            <span class="text-gray-400">
+              Ubicación
+            </span>
+
+            <span class="font-semibold text-[#0B1F3A]">
+              ${location || "--"}
+            </span>
+
+          </div>
+
+          <div
+            class="flex items-center justify-between"
+          >
+
+            <span class="text-gray-400">
+              Capacidad
+            </span>
+
+            <span class="font-semibold text-[#0B1F3A]">
+              ${capacity || "--"} residentes
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex gap-4">
+
+          <!-- CLOSE -->
+          <button
+            onclick="closePreview()"
+            class="w-full bg-[#EEF4FA] text-[#0B1F3A] py-4 rounded-2xl font-semibold"
+          >
+            Cerrar
+          </button>
+
+          <!-- PUBLISH -->
+          <button
+            onclick="document.getElementById('publishPlanBtn').click()"
+            class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-4 rounded-2xl font-semibold transition-all duration-300"
+          >
+            Publicar
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+  // SHOW
+  previewModal.classList.remove(
+    "hidden"
+  );
+
+  previewModal.classList.add(
+    "flex"
+  );
+
+});
+
+// CLOSE FUNCTION
+window.closePreview = function () {
+
+  previewModal.classList.add(
+    "hidden"
+  );
+
+  previewModal.classList.remove(
+    "flex"
+  );
+
+};
+
 
 // SUBMIT
 form.addEventListener("submit", async (e) => {
@@ -91,6 +360,9 @@ form.addEventListener("submit", async (e) => {
     const description =
       document.getElementById("planDescription").value;
 
+    const category =
+      selectedCategory.value;    
+
     const date =
       document.getElementById("planDate").value;
 
@@ -122,6 +394,7 @@ form.addEventListener("submit", async (e) => {
       // PLAN DATA
       title,
       description,
+      category,
       date,
       time,
       location,

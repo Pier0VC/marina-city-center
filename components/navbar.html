@@ -1,0 +1,66 @@
+<nav
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[88%] max-w-[320px] z-[9999]"
+>
+
+  <div
+    class="relative bg-[#081C35]/95 backdrop-blur-2xl rounded-[32px] px-10 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
+  >
+
+    <!-- CENTER BUTTON -->
+    <button
+      onclick="window.location.href='create-plan.html'"
+      class="absolute left-1/2 -translate-x-1/2 -top-7 w-20 h-20 rounded-[28px] bg-[#5DA9E9] flex items-center justify-center shadow-[0_15px_40px_rgba(93,169,233,0.45)] hover:scale-105 transition-all duration-300"
+    >
+
+      <i
+        data-lucide="plus"
+        class="w-9 h-9 text-white"
+      ></i>
+
+    </button>
+
+    <!-- NAV ITEMS -->
+    <div class="flex items-center justify-between">
+
+      <!-- HOME -->
+      <button
+        onclick="window.location.href='home.html'"
+        class="flex flex-col items-center gap-2 text-white/90 hover:text-white transition-all duration-300"
+      >
+
+        <i
+          data-lucide="house"
+          class="w-6 h-6"
+        ></i>
+
+        <span class="text-sm font-medium">
+          Home
+        </span>
+
+      </button>
+
+      <!-- SPACER -->
+      <div class="w-16"></div>
+
+      <!-- PROFILE -->
+      <button
+        onclick="window.location.href='profile.html'"
+        class="flex flex-col items-center gap-2 text-white/90 hover:text-white transition-all duration-300"
+      >
+
+        <i
+          data-lucide="user"
+          class="w-6 h-6"
+        ></i>
+
+        <span class="text-sm font-medium">
+          Profile
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>

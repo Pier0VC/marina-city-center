@@ -4,16 +4,29 @@
 <head>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
-  <title>Resident Access</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="./assets/favicon.png"
+  />
+
+  <title>Marina Community</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/styles.css">
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,92 +40,136 @@
 
 <body>
 
+  <!-- BACKGROUND -->
   <section
-    class="min-h-screen bg-[#0B1F3A] flex items-center justify-center px-6"
+    class="relative min-h-screen overflow-hidden flex items-center justify-center px-6 py-10"
   >
+
+    <!-- BG IMAGE -->
+    <img
+      src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2000&auto=format&fit=crop"
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+
+    <!-- DARK OVERLAY -->
+    <div
+      class="absolute inset-0 bg-[#081C35]/65 backdrop-blur-[2px]"
+    ></div>
+
+    <!-- LIGHT GRADIENT -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"
+    ></div>
 
     <!-- LOGIN CARD -->
     <div
-      class="w-full max-w-md bg-white/10 border border-white/10 backdrop-blur-3xl rounded-[36px] p-10 shadow-2xl"
+      class="relative z-20 w-full max-w-md"
     >
 
-      <!-- LOGO -->
-      <div class="flex justify-center mb-8">
-
-        <img
-          src="./assets/logos/marina-logo-white.png"
-          class="h-16 object-contain"
-        >
-
-      </div>
-
-      <!-- TITLE -->
-      <h1
-        class="text-white text-4xl font-bold text-center mb-3"
+      <div
+        class="bg-white/10 border border-white/20 backdrop-blur-3xl rounded-[38px] px-8 py-10 md:px-10 md:py-12 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
       >
-        Resident Access
-      </h1>
 
-      <p
-        class="text-gray-300 text-center mb-10"
-      >
-        Sign in to Marina Community
-      </p>
+        <!-- LOGO -->
+        <div class="flex justify-center mb-10">
 
-      <!-- FORM -->
-      <form class="space-y-6">
-
-        <!-- EMAIL -->
-        <div>
-
-          <label class="text-white block mb-3">
-            Email
-          </label>
-
-          <input
-            id="loginEmail"
-            type="email"
-            placeholder="resident@email.com"
-            class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+          <img
+            src="./assets/logos/marina-logo-white.png"
+            class="h-16 md:h-20 object-contain"
           >
 
         </div>
 
-        <!-- PASSWORD -->
-        <div>
+        <!-- TITLE -->
+        <div class="text-center mb-10">
 
-          <label class="text-white block mb-3">
-            Password
-          </label>
-
-          <input
-            id="loginPassword"
-            type="password"
-            placeholder="••••••••"
-            class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
+          <h1
+            class="text-white text-4xl md:text-5xl font-bold mb-3 tracking-tight"
           >
+            Marina
+          </h1>
+
+          <p
+            class="text-white/70 text-base md:text-lg"
+          >
+            Accede a tu comunidad privada
+          </p>
 
         </div>
 
-        <!-- BUTTON -->
-        <button
-          type="submit"
-          class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
+        <!-- FORM -->
+        <form
+          id="loginForm"
+          class="space-y-7"
         >
-          Enter Community
-        </button>
 
-      </form>
+          <!-- EMAIL -->
+          <div>
 
-      <!-- REGISTER -->
-      <div class="text-center mt-6">
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Correo
+            </label>
 
-        <button
-          onclick="window.location.href='register.html'"
-          class="text-[#5DA9E9] font-semibold"
-        >
-          Create New Account
-        </button>
+            <input
+              id="loginEmail"
+              type="email"
+              required
+              placeholder="correo@marina.com"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300"
+            >
+
+          </div>
+
+          <!-- PASSWORD -->
+          <div>
+
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Contraseña
+            </label>
+
+            <input
+              id="loginPassword"
+              type="password"
+              required
+              placeholder="••••••••"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300"
+            >
+
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <button
+            type="submit"
+            class="w-full mt-6 bg-white hover:bg-[#F3F7FB] text-[#081C35] py-4 rounded-full text-xl font-bold transition-all duration-300 hover:scale-[1.02] shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+          >
+            Ingresar
+          </button>
+
+        </form>
+
+        <!-- EXTRA -->
+        <div class="mt-8 text-center space-y-4">
+
+          <!-- REGISTER -->
+          <button
+            onclick="window.location.href='register.html'"
+            class="text-white/80 hover:text-white transition-all duration-300 text-sm"
+          >
+            Crear nueva cuenta
+          </button>
+
+          <!-- FORGOT -->
+          <p
+            class="text-white/50 text-sm"
+          >
+            ¿Olvidaste tu contraseña?
+          </p>
+
+        </div>
 
       </div>
 
@@ -127,4 +184,5 @@
   </script>
 
 </body>
+
 </html>

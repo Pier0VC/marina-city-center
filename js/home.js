@@ -15,6 +15,71 @@ import {
 const eventsContainer =
   document.getElementById("eventsContainer");
 
+// SEARCH
+const searchInput =
+  document.getElementById("searchInput");
+
+// FILTER BUTTONS
+const filterButtons =
+  document.querySelectorAll(".filter-btn");
+
+// CURRENT FILTER
+let currentFilter =
+  "all";  
+
+// ALL PLANS
+let allPlans = [];  
+
+// APPLY FILTERS
+function applyFilters() {
+
+  // SEARCH VALUE
+  const searchValue =
+    searchInput.value.toLowerCase();
+
+  // CARDS
+  const cards =
+    document.querySelectorAll(".plan-card");
+
+  cards.forEach((card) => {
+
+    // TEXT
+    const text =
+      card.innerText.toLowerCase();
+
+    // CATEGORY
+    const category =
+      card.dataset.category;
+
+    // SEARCH MATCH
+    const matchesSearch =
+      text.includes(searchValue);
+
+    // FILTER MATCH
+    const matchesFilter =
+      currentFilter === "all" ||
+      category === currentFilter;
+
+    // SHOW/HIDE
+    if (
+      matchesSearch &&
+      matchesFilter
+    ) {
+
+      card.style.display =
+        "block";
+
+    } else {
+
+      card.style.display =
+        "none";
+
+    }
+
+  });
+
+}
+
 // LOAD PLANS
 async function loadPlans() {
 
@@ -26,27 +91,49 @@ async function loadPlans() {
 
     // QUERY
     const plansQuery = query(
-      collection(db, "plans"),
-      orderBy("createdAt", "desc")
+      collection(db, "plans")
     );
 
     // SNAPSHOT
     const plansSnapshot =
       await getDocs(plansQuery);
 
+    // MAP PLANS
+    allPlans = plansSnapshot.docs.map((doc) => ({
+
+      id:
+        doc.id,
+
+      ...doc.data()
+
+    }));
+
+    // SORT BY EVENT DATE
+    allPlans.sort((a, b) => {
+
+      const dateA =
+        new Date(`${a.date}T${a.time}`);
+
+      const dateB =
+        new Date(`${b.date}T${b.time}`);
+
+      return dateA - dateB;
+
+    });  
+
     // CLEAR
     eventsContainer.innerHTML = "";
 
     // LOOP PLANS
-    for (const document of plansSnapshot.docs) {
+    for (const planData of allPlans) {
 
       // PLAN
       const plan =
-        document.data();
+        planData;
 
       // PLAN ID
       const planId =
-        document.id;
+        planData.id;
 
       // OWNER
       const isOwner =
@@ -170,7 +257,7 @@ async function loadPlans() {
       const card = `
 
         <div
-          class="bg-white rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-500"
+          data-category="${plan.category}" class="plan-card bg-white rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-500"
         >
 
           <!-- COVER -->
@@ -191,7 +278,8 @@ async function loadPlans() {
               class="absolute top-5 left-5 bg-white/20 backdrop-blur-xl text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20"
             >
               ${plan.location}
-            </div>
+            </div>          
+
 
             <!-- TITLE -->
             <div
@@ -318,3 +406,51 @@ async function loadPlans() {
 
 // INIT
 loadPlans();
+
+// SEARCH FILTER
+searchInput.addEventListener(
+  "input",
+  applyFilters
+);
+
+// FILTER BUTTONS
+filterButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    // RESET
+    filterButtons.forEach((btn) => {
+
+      btn.classList.remove(
+        "bg-[#081C35]",
+        "text-white"
+      );
+
+      btn.classList.add(
+        "bg-white",
+        "text-[#0B1F3A]"
+      );
+
+    });
+
+    // ACTIVE
+    button.classList.remove(
+      "bg-white",
+      "text-[#0B1F3A]"
+    );
+
+    button.classList.add(
+      "bg-[#081C35]",
+      "text-white"
+    );
+
+    // SAVE FILTER
+    currentFilter =
+      button.dataset.filter;
+
+    // APPLY
+    applyFilters();
+
+  });
+
+});

@@ -16,6 +16,7 @@
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="./css/styles.css">
@@ -83,10 +84,63 @@
         </span>
 
         <input
+          id="searchInput"
           type="text"
-          placeholder="Search plans or neighbors"
+          placeholder="Buscar planes o vecinos"
           class="w-full outline-none text-gray-700"
         >
+
+      </div>
+
+    </section>
+
+    <!-- FILTERS -->
+    <section class="px-6 mt-6">
+
+      <div
+        id="filtersContainer"
+        class="flex gap-3 overflow-x-auto pb-2 no-scrollbar"
+      >
+
+        <!-- ALL -->
+        <button
+          data-filter="all"
+          class="filter-btn active-filter bg-[#081C35] text-white px-5 py-3 rounded-full font-semibold whitespace-nowrap transition-all duration-300"
+        >
+          All
+        </button>
+
+        <!-- SOCIAL -->
+        <button
+          data-filter="Social"
+          class="filter-btn bg-white text-[#0B1F3A] px-5 py-3 rounded-full font-semibold whitespace-nowrap shadow-md transition-all duration-300"
+        >
+          Social
+        </button>
+
+        <!-- SPORTS -->
+        <button
+          data-filter="Sports"
+          class="filter-btn bg-white text-[#0B1F3A] px-5 py-3 rounded-full font-semibold whitespace-nowrap shadow-md transition-all duration-300"
+        >
+          Sports
+        </button>
+
+        <!-- CHILL -->
+        <button
+          data-filter="Chill"
+          class="filter-btn bg-white text-[#0B1F3A] px-5 py-3 rounded-full font-semibold whitespace-nowrap shadow-md transition-all duration-300"
+        >
+          Chill
+        </button>
+
+        <!-- OUTDOOR -->
+        <button
+          data-filter="Outdoor"
+          class="filter-btn bg-white text-[#0B1F3A] px-5 py-3 rounded-full font-semibold whitespace-nowrap shadow-md transition-all duration-300"
+        >
+          Outdoor
+        </button>
 
       </div>
 
@@ -120,78 +174,7 @@
   </main>
 
   <!-- BOTTOM NAVIGATION -->
-  <nav
-    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0B1F3A] w-[92%] max-w-md rounded-[32px] px-6 py-5 shadow-2xl"
-  >
-
-    <div class="flex items-center justify-between text-white">
-
-      <!-- HOME -->
-      <button class="flex flex-col items-center gap-2">
-
-        <span class="text-2xl">
-          🏠
-        </span>
-
-        <span class="text-sm">
-          Home
-        </span>
-
-      </button>
-
-      <!-- EXPLORE -->
-      <button class="flex flex-col items-center gap-2">
-
-        <span class="text-2xl">
-          🔎
-        </span>
-
-        <span class="text-sm">
-          Explore
-        </span>
-
-      </button>
-
-      <!-- CREATE -->
-      <button
-        onclick="window.location.href='create-plan.html'"
-        class="w-16 h-16 rounded-3xl bg-[#5DA9E9] text-white text-3xl flex items-center justify-center -mt-12 shadow-2xl"
-      >
-        +
-      </button>
-
-      <!-- COMMUNITY -->
-      <button class="flex flex-col items-center gap-2">
-
-        <span class="text-2xl">
-          👥
-        </span>
-
-        <span class="text-sm">
-          Community
-        </span>
-
-      </button>
-
-      <!-- PROFILE -->
-      <button
-        onclick="window.location.href='profile.html'"
-        class="flex flex-col items-center gap-2"
-      >
-
-        <span class="text-2xl">
-          👤
-        </span>
-
-        <span class="text-sm">
-          Profile
-        </span>
-
-      </button>
-
-    </div>
-
-  </nav>
+  <div id="navbarContainer"></div>
 
     <script
     type="module"
@@ -216,6 +199,11 @@
     <script
     type="module"
     src="./js/delete-plan.js">
+    </script>
+    
+    <script
+      type="module"
+      src="./js/load-components.js">
     </script>
     
 </body>
