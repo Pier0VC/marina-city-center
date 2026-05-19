@@ -4,152 +4,224 @@
 <head>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
-  <title>Create Account</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="./assets/favicon.png"
+  />
+
+  <title>Marina Community</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/styles.css">
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
 </head>
 
-<body class="bg-[#0B1F3A] min-h-screen flex items-center justify-center px-6">
+<body>
 
-  <!-- CARD -->
-  <div
-    class="w-full max-w-lg bg-white/10 border border-white/10 backdrop-blur-3xl rounded-[40px] p-10 shadow-2xl"
+  <!-- BACKGROUND -->
+  <section
+    class="relative min-h-screen overflow-hidden flex items-center justify-center px-6 py-10"
   >
 
-    <!-- LOGO -->
-    <div class="flex justify-center mb-8">
+    <!-- BG IMAGE -->
+    <img
+      src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2000&auto=format&fit=crop"
+      class="absolute inset-0 w-full h-full object-cover"
+    >
 
-      <img
-        src="./assets/logos/marina-logo-white.png"
-        class="h-16 object-contain"
+    <!-- OVERLAY -->
+    <div
+      class="absolute inset-0 bg-[#081C35]/75"
+    ></div>
+
+    <!-- CARD -->
+    <div
+      class="relative z-20 w-full max-w-lg"
+    >
+
+      <div
+        class="bg-white/10 border border-white/15 backdrop-blur-3xl rounded-[42px] px-8 py-10 md:px-10 md:py-12 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
       >
+
+        <!-- LOGO -->
+        <div class="flex justify-center mb-8">
+
+          <img
+            src="./assets/logos/marina-logo-white.png"
+            class="h-16 md:h-20 object-contain"
+          >
+
+        </div>
+
+        <!-- TITLE -->
+        <div class="text-center mb-10">
+
+          <h1
+            class="text-white text-4xl md:text-5xl font-bold mb-3"
+          >
+            Crear Cuenta
+          </h1>
+
+          <p
+            class="text-white/70 text-base"
+          >
+            Accede a la comunidad privada de Marina
+          </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form
+          id="registerForm"
+          class="space-y-7"
+        >
+
+          <!-- FULL NAME -->
+          <div>
+
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Nombre Completo *
+            </label>
+
+            <input
+              id="registerName"
+              type="text"
+              required
+              placeholder="Pierre Dupont"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300"
+            >
+
+          </div>
+
+          <!-- INVITE CODE -->
+          <div>
+
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Código de Invitación *
+            </label>
+
+            <input
+              id="registerInviteCode"
+              type="text"
+              required
+              placeholder="MCC-A2104-9K2P"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300 uppercase"
+            >
+
+          </div>
+
+          <!-- EMAIL -->
+          <div>
+
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Correo *
+            </label>
+
+            <input
+              id="registerEmail"
+              type="email"
+              required
+              placeholder="resident@email.com"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300"
+            >
+
+          </div>
+
+          <!-- PASSWORD -->
+          <div>
+
+            <label
+              class="text-white text-sm font-medium block mb-3"
+            >
+              Contraseña *
+            </label>
+
+            <input
+              id="registerPassword"
+              type="password"
+              required
+              placeholder="••••••••"
+              class="w-full bg-transparent border-b border-white/30 py-4 text-white placeholder:text-white/40 outline-none focus:border-[#5DA9E9] transition-all duration-300"
+            >
+
+          </div>
+
+          <!-- INFO -->
+          <div
+            class="bg-white/5 border border-white/10 rounded-3xl p-5"
+          >
+
+            <p class="text-white/70 text-sm leading-relaxed">
+
+              El código de invitación identifica tu residencia
+              dentro de Marina Community.
+
+            </p>
+
+          </div>
+
+          <!-- BUTTON -->
+          <button
+            type="submit"
+            class="w-full bg-white hover:bg-[#F3F7FB] text-[#081C35] py-4 rounded-full text-lg font-bold tracking-[0.12em] uppercase transition-all duration-300 hover:scale-[1.02] shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+          >
+            Crear Cuenta
+          </button>
+
+        </form>
+
+        <!-- LOGIN -->
+        <div class="text-center mt-8">
+
+          <button
+            onclick="window.location.href='login.html'"
+            class="text-white/80 hover:text-white transition-all duration-300 text-sm"
+          >
+            Ya tengo una cuenta
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
-    <!-- TITLE -->
-    <h1
-      class="text-white text-4xl font-bold text-center mb-3"
-    >
-      Create Account
-    </h1>
+  </section>
 
-    <p
-      class="text-gray-300 text-center mb-10"
-    >
-      Join Marina Community
-    </p>
-
-    <!-- FORM -->
-    <form
-      id="registerForm"
-      class="space-y-6"
-    >
-
-      <!-- NAME -->
-      <div>
-
-        <label class="text-white block mb-3">
-          Full Name
-        </label>
-
-        <input
-          id="registerName"
-          type="text"
-          placeholder="Pier Oviedo"
-          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
-        >
-
-      </div>
-
-      <!-- APARTMENT -->
-      <div>
-
-        <label class="text-white block mb-3">
-          Apartment ID
-        </label>
-
-        <input
-          id="registerApartment"
-          type="text"
-          placeholder="Tower B · 2104"
-          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
-        >
-
-      </div>
-
-      <!-- EMAIL -->
-      <div>
-
-        <label class="text-white block mb-3">
-          Email
-        </label>
-
-        <input
-          id="registerEmail"
-          type="email"
-          placeholder="resident@email.com"
-          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
-        >
-
-      </div>
-
-      <!-- PASSWORD -->
-      <div>
-
-        <label class="text-white block mb-3">
-          Password
-        </label>
-
-        <input
-          id="registerPassword"
-          type="password"
-          placeholder="••••••••"
-          class="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 text-white outline-none"
-        >
-
-      </div>
-
-      <!-- BUTTON -->
-      <button
-        type="submit"
-        class="w-full bg-[#5DA9E9] hover:bg-[#79bbf0] text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
-      >
-        Create Account
-      </button>
-
-    </form>
-
-    <!-- LOGIN -->
-    <div class="text-center mt-8">
-
-      <button
-        onclick="window.location.href='login.html'"
-        class="text-[#5DA9E9] font-semibold"
-      >
-        Already have an account?
-      </button>
-
-    </div>
-
-  </div>
-
+  <!-- REGISTER JS -->
   <script
     type="module"
     src="./js/register.js">
   </script>
 
 </body>
+
 </html>
