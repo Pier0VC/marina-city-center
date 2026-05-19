@@ -88,6 +88,9 @@ categoryButtons.forEach((button) => {
 // COVER IMAGES MAP
 const coverImages = {
 
+  "sports-meetup":
+  "https://images.unsplash.com/photo-1598881034666-6d3443d4b1bc?q=80&w=1170&auto=format&fit=crop",
+
   "movie-night":
     "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1400&auto=format&fit=crop",
 
